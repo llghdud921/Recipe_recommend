@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.12.4, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.12.4, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <!-- 아이콘 설정   -->
+  <link rel="shortcut icon" href="/static/reco/assets/images/logo2.png" type="image/x-icon">
+  <meta name="description" content="">
+
+  <title>Home</title>
+  <link rel="stylesheet" href="/static/reco/assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="/static/reco/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/reco/assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/static/reco/assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="/static/reco/assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="/static/reco/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="/static/reco/assets/tether/tether.min.css">
+  <link rel="stylesheet" href="/static/reco/assets/theme/css/style.css">
+  <link rel="stylesheet" href="/static/reco/assets/gallery/style.css">
+  <link rel="preload" as="style" href="/static/reco/assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="/static/reco/assets/mobirise/css/mbr-additional.css" type="text/css">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.min.css" rel="stylesheet">
+    <link href="css/select2.min.css" rel="stylesheet">
+
+</head>
+<body>
+<section class="features3 cid-sxfRolSOgY" id="features3-b">
+    {% if reco_3_recipe %}
+    <h3>&ensp;&ensp; &ensp;  {{ ingredients }} 검색 결과..</h3>
+    <div class="container">
+        <div class="media-container-row">
+            {% for reco in reco_3_recipe %}
+            <div class="card p-9 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper">
+                    <div class="card-img" >
+                        <img src="{{ reco.images }}" alt="Mobirise">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">
+                            {{ reco.titles }}
+                        </h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            {{ reco.comment }}
+                        </p>
+                    </div>
+                    <div class="mbr-section-btn text-center">
+                        <a href="{% url 'reco:detail' reco.recipe_id %}" class="btn btn-primary display-4">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</section>
+<section class="mbr-gallery mbr-slider-carousel cid-sxfTwgWOXf" id="gallery2-f">
+
+    <div class="container">
+        <div><!-- Filter -->
+            <div class="mbr-gallery-row">
+                {% for reco in reco_4_recipe %}
+                <div class="mbr-gallery-layout-default">
+                    <div>
+                        <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false">
+                            <div href="{% url 'reco:detail' reco.recipe_id %}" data-toggle="modal">
+                                <img src="{{ reco.images }}" width="150px" height="150px">
+                                <span class="icon-focus">
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div><!-- Lightbox -->
+    </div>
+</div>
+</section>
+  <script src="/static/reco/assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="/static/reco/assets/popper/popper.min.js"></script>
+  <script src="/static/reco/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/reco/assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="/static/reco/assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="/static/reco/assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="/static/reco/assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="/static/reco/assets/masonry/masonry.pkgd.min.js"></script>
+  <script src="/static/reco/assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/static/reco/assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+  <script src="/static/reco/assets/tether/tether.min.js"></script>
+  <script src="/static/reco/assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+  <script src="/static/reco/assets/theme/js/script.js"></script>
+  <script src="/static/reco/assets/slidervideo/script.js"></script>
+  <script src="/static/reco/assets/gallery/player.min.js"></script>
+  <script src="/static/reco/assets/gallery/script.js"></script>
+  <script src="/static/reco/assets/formoid/formoid.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+{% extends 'reco/base.html' %}
+{% block content %}
+
+<section class="step3 cid-sxfROPJLbm" id="step3-c">
+    <div class="container">
+        <h2 class="mbr-section-title pb-3 mbr-fonts-style align-center display-2">
+            {{ recipe_choice.titles }}
+        </h2>
+        <h3 class="mbr-section-subtitle pb-5 mbr-fonts-style align-center display-5" style = "padding-bottom: 1rem!important;">
+            {{ recipe_choice.comment }}
+        </h3>
+        <h3 class="mbr-section-subtitle pb-5 mbr-fonts-style align-center display-5">
+            {{ recipe_choice.type }} | {{ recipe_choice.serves }} | {{ recipe_choice.cooking }}
+        </h3>
+        <div class="media-container-row">
+            <div class="media-block" style="width: 49%;">
+                <div class="mbr-figure">
+                    <img src={{ recipe_choice.images }}>
+                </div>
+            </div>
+
+            <div class="step-container">
+              <div class="card">
+                  <div class="step-element d-flex">
+                    <div class="step-text-content">
+                      <h3 class="mbr-step-title pb-3 mbr-fonts-style display-5">
+                        Ingredients
+                      </h3>
+                      <div style = "display : flex;">
+                        <ul class="ingredients" style = "padding: 30px; list-style: none; background: #f9f9f9;">
+                          {% for idx, ingredient in recipe_choice.ingredients.items %}
+                            {% if idx|divisibleby:2 %}
+                              <li style = "margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #dedede;">
+                                  {{ ingredient }}
+                              </li>
+                            {% endif %}
+                          {% endfor%}
+                        </ul>
+                        <ul class="ingredients" style = "padding: 30px; list-style: none; background: #f9f9f9;">
+                          {% for idx, ingredient in recipe_choice.ingredients.items %}
+                            {% if not idx|divisibleby:2 %}
+                            <li style = "margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #dedede;">
+                                {{ ingredient }}
+                            </li>
+                            {% endif %}
+                          {% endfor%}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <!-- {% for idx, ingredient in recipe_choice.ingredients.items %}
+                  <div class="card">
+                      <div class="step-element d-flex">
+                          <div class="step-wrapper pr-3">
+                              <div class="step d-flex align-items-center justify-content-center">
+                                  {{ idx }}
+                              </div>
+                          </div>
+                          <div class="step-text-content">
+                              <h4 class="mbr-step-title pb-3 mbr-fonts-style display-5">
+
+                              </h4>
+                              <p class="mbr-step-text mbr-fonts-style display-7">
+                                {{ ingredient }}
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %} -->
+              </div>
+            </div>
+        </div>
+</section>
+
+<section class="timeline1 cid-sxfU72tGuV" id="timeline1-h">
+    <div class="container align-center">
+        <h2 class="mbr-section-title pb-5 mbr-fonts-style display-2">
+            Recipe
+        </h2>
+
+        <div class="container timelines-container" mbri-timelines="">
+          {% for idx, recipe in recipe_choice.recipes.items %}
+              <!--1-->
+              <!-- <div class="row timeline-element separline">
+                <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
+                  <div class="time-line-date-content">
+                    <p class="mbr-timeline-date mbr-fonts-style display-5">
+                      {{ idx|add:1 }}
+                    </p>
+                  </div>
+                </div>
+                <span class="iconBackground"></span>
+                <div class="col-xs-12 col-md-6 align-right">
+                  <div class="timeline-text-content">
+                    <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
+                      {{ recipe }}
+                    </h4>
+                    <p class="mbr-timeline-text mbr-fonts-style display-7">
+                      {{ recipe }}
+                    </p>
+                  </div>
+                </div>
+              </div> -->
+              <!--2-->
+              <div class="row timeline-element  separline">
+                <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
+                  <div class="time-line-date-content">
+                    <p class="mbr-timeline-date mbr-fonts-style display-5">
+                      {{ idx|add:1 }}
+                    </p>
+                  </div>
+                </div>
+                <span class="iconBackground"></span>
+                <div class="col-xs-12 col-md-6 align-left ">
+                  <div class="timeline-text-content">
+                    <!-- <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
+                      {{ recipe }}
+                    </h4> -->
+                    <p class="mbr-timeline-text mbr-fonts-style display-7">
+                      {{ recipe }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+          {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
